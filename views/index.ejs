@@ -1,0 +1,38 @@
+<!-- index.ejs -->
+<html>
+
+<%- include('./partials/head.ejs') %>
+
+    <body>
+        <%- include('./partials/navbar.ejs') %>
+
+            <div class="content">
+                <h2>All Messages</h2>
+                <div>
+                    <% if(messages.length>0) { %>
+                        <% messages.forEach( (message)=>{ %>
+                            <div class="messages">
+                                <h3 class="title">
+                                    <%= `${message.user} says: `%>
+                                </h3>
+                                <p class="messages">
+                                    <%= message.text %>
+                                </p>
+                                <p class="">
+                                    <%= message.added %>
+                                </p>
+                                <% const index = messages.indexOf(message)+1%>
+                            </div>
+                            <a href="/new/<%= index %>">open</a>
+                            <% }) %>
+                                <% } else {%>
+                                    <p> There are no messages to display...</p>
+                                    <% } %>
+                </div>
+            </div>
+
+            <%- include('./partials/footer.ejs') %>
+
+    </body>
+
+</html>

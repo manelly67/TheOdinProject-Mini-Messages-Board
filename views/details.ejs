@@ -1,0 +1,42 @@
+<html lang="en">
+
+<%- include('./partials/head.ejs') %>
+
+
+    <body>
+        <%- include('./partials/navbar') %>
+
+            <div class="detail-message content">
+                <div>
+                    <div>
+                        <p style="font-size: 2rem;">
+                            <%= `${messages[id-1].user} ` %><span style="font-size: 1.5rem;">says:</span>
+                        </p>
+                    </div>
+                    <div>
+                        <p style="font-size: 2.5rem;">
+                            <%= messages[id-1].text %>
+                        </p>
+                    </div>
+
+                    <p>
+                        <%= messages[id-1].added %> %>
+                    </p>
+                    <button id="close">close</button>
+                </div>
+                
+            </div>
+
+            <%- include('./partials/footer.ejs') %>
+
+            <script>
+                const closeButton = document.getElementById('close');
+
+                closeButton.addEventListener('click', (e) => {
+                    window.location.href= "/" ;
+                });
+
+            </script>
+    </body>
+
+</html>
