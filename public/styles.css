@@ -67,6 +67,7 @@ p, h1, h2, h3, a, ul {
 }
 
 
+
 /* nav and footer styles*/
 nav {
     display: flex;
@@ -96,6 +97,12 @@ nav p, nav a {
     color: #d195a9;
     font-weight: 300;
     font-size: 1.3em;
+}
+
+@media (max-width: 421px) {
+    nav h1{
+    font-size: 1.7em;
+}   
 }
 
 footer{
@@ -129,6 +136,13 @@ h3 {
     align-items: center;
 }
 
+
+@media (max-width: 421px) {
+    .content > div {
+        gap: 20px;
+    }   
+}
+
 /* index style */
 
 .messages {
@@ -138,6 +152,8 @@ h3 {
     padding-right: 20px;
     border-left: 6px solid #663540;
 }
+
+
 
 .messages + a {
     height: fit-content;
@@ -225,6 +241,13 @@ input:valid, input:focus{
     font-size: 1rem;
     cursor: pointer;
     transition: border-color 0.25s;
+}
+
+@media (max-width: 421px) {
+    .detail-message button {
+        transform: translate(150px, -110%);
+    }
+    
 }
 
 .new-message button:hover,
