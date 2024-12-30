@@ -6,16 +6,16 @@
 <body>
     <%- include('./partials/navbar') %>
     
-    <div class="new-message content">
+   <div class="new-message content">
         <form action="/new" method="POST">
-            <label for="user">Name: </label>
-            <input type="text" id="user" name="user" required>
-            <label for="text"> My message: </label>
-            <input type="text" id="text" name="text" required>
+            <label for="userm">Name: </label>
+            <input type="text" id="userm" name="userm" required>
+            <label for="textm"> My message: </label>
+            <input type="text" id="textm" name="textm" required>
             
             <button>Submit</button>
         </form>
-    </div>
+    </div> 
 
     <%- include('./partials/footer.ejs') %>
 </body>

@@ -4,7 +4,7 @@ const path = require("node:path");
 const messagesRoutes = require('./routes/messagesRoutes.js');
 const arrays = require("./arrays.js");
 
-const { links, messages } = arrays;
+const { links } = arrays;
 
 // express app
 const app = express();
@@ -19,12 +19,8 @@ app.set("view engine", "ejs");
 
 // routes
 
+app.use('/', messagesRoutes);
 
-app.get("/", (req, res) => {
-    res.render("index", { links: links, title:links[0].text, messages: messages});
-});
-
-app.use('/new', messagesRoutes);
 
 //404 page
 

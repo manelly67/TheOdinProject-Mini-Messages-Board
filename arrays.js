@@ -3,6 +3,7 @@ const links = [
     { href: "new", text: "New Message" },
 ];
 
+// REMOVER ESTE ARRAY AL FINALIZAR LAS MODIFICACIONES
 const messages = [
    {
       text: "Hi there!",

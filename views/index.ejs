@@ -13,15 +13,15 @@
                         <% messages.forEach( (message)=>{ %>
                             <div class="messages">
                                 <h3 class="title">
-                                    <%= `${message.user} says: `%>
+                                    <%= `${message.userm} says: `%>
                                 </h3>
                                 <p class="messages">
-                                    <%= message.text %>
+                                    <%= message.textm %>
                                 </p>
                                 <p class="">
                                     <%= message.added %>
                                 </p>
-                                <% const index = messages.indexOf(message)+1%>
+                                <% const index = message.id %>
                             </div>
                             <a href="/new/<%= index %>">open</a>
                             <% }) %>
