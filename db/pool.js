@@ -16,5 +16,18 @@ if (myObject.NODE_ENV ='production'){
     },
   });
 
+}else{
+  
+  module.exports = new Pool({
+    host: myObject.HOST, 
+    user: myObject.ROLE_NAME,
+    database: myObject.DATABASE,
+    password: myObject.PASSWORD,
+    port: 5432,
+    ssl: {
+    require: true,
+    },
+  });
+
 }
 

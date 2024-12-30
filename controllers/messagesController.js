@@ -19,7 +19,6 @@ async function newMessageGet(req, res) {
   res.render("new", { links: links, title: links[1].text });
 }
 
-// MODIFICAR AGREGAR CON UN QUERY
 const newMessagePost = [
   validateUser,
   async (req, res) => {
