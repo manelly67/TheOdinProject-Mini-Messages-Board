@@ -10,7 +10,7 @@ if (myObject.NODE_ENV ='production'){
     user: myObject.ROLE_NAME,
     database: myObject.DATABASE,
     password: myObject.PASSWORD,
-    port: 5432,
+    port: myObject.PORT,
     ssl: {
     require: true,
     },
@@ -23,7 +23,7 @@ if (myObject.NODE_ENV ='production'){
     user: myObject.ROLE_NAME,
     database: myObject.DATABASE,
     password: myObject.PASSWORD,
-    port: 5432,
+    port: myObject.PORT,
     ssl: {
     require: true,
     },

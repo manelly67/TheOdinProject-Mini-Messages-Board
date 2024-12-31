@@ -1,5 +1,5 @@
 const express = require("express");
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 const path = require("node:path");
 const messagesRoutes = require('./routes/messagesRoutes.js');
 const arrays = require("./arrays.js");
