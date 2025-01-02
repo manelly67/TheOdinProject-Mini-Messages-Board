@@ -5,7 +5,7 @@ const { Client } = require("pg");
 
 const myObject = {}
 require('dotenv').config({ processEnv: myObject });
-const connectionString = `postgresql://${myObject.ROLE_NAME}:${myObject.PASSWORD}@${myObject.HOST}/${myObject.DATABASE}?sslmode=require`;
+const connectionString = `postgresql://${myObject.ROLE_NAME}:${myObject.PASSWORD}@${myObject.DB_HOST}/${myObject.DATABASE}?sslmode=require`;
 
 
 const SQL = `CREATE TABLE IF NOT EXISTS messages ( 

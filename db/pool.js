@@ -6,7 +6,7 @@ require('dotenv').config({ processEnv: myObject });
 if (myObject.NODE_ENV ='production'){
 
   module.exports = new Pool({
-    host: myObject.HOST, 
+    host: myObject.DB_HOST, 
     user: myObject.ROLE_NAME,
     database: myObject.DATABASE,
     password: myObject.PASSWORD,
@@ -18,7 +18,7 @@ if (myObject.NODE_ENV ='production'){
 }else{
   
   module.exports = new Pool({
-    host: myObject.HOST, 
+    host: myObject.DB_HOST, 
     user: myObject.ROLE_NAME,
     database: myObject.DATABASE,
     password: myObject.PASSWORD,
