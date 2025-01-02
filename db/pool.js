@@ -11,10 +11,8 @@ if (myObject.NODE_ENV ='production'){
     database: myObject.DATABASE,
     password: myObject.PASSWORD,
     port: process.env.PORT || myObject.DB_PORT,
-    options: `endpoint%3D${myObject.ENDPOINT_ID}`,
-    ssl: {
-    require: true,
-    },
+    ssl: 'verify-full',
+    sslrootcert: '/etc/ssl/certs/ca-certificates.crt',
   });
 
 }else{
