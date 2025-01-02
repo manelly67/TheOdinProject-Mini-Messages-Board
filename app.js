@@ -29,7 +29,10 @@ app.use((req, res) => {
 });
 
 
-app.listen(PORT, () => {
+/* app.listen(PORT, () => {
     console.log(`Express and EJS view engine ${PORT}!`);
-});
+}); */
 
+app.listen(PORT, '0.0.0.0', () => {
+    console.log(`Server is running on http://0.0.0.0:${PORT}`);
+});
