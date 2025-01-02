@@ -1,5 +1,6 @@
 const express = require("express");
 const PORT = process.env.PORT || 3000;
+const HOST = process.env.HOST || 'localhost';
 const path = require("node:path");
 const messagesRoutes = require('./routes/messagesRoutes.js');
 const arrays = require("./arrays.js");
@@ -33,6 +34,6 @@ app.use((req, res) => {
     console.log(`Express and EJS view engine ${PORT}!`);
 }); */
 
-app.listen(PORT, '0.0.0.0', () => {
-    console.log(`Server is running on http://0.0.0.0:${PORT}`);
+app.listen(PORT, HOST, () => {
+    console.log(`Server is running on http://${HOST}:${PORT}`);
 });
