@@ -1,6 +1,6 @@
 const express = require("express");
 const port = process.env.PORT || 3000;
-const host = '0.0.0.0';
+const host = process.env.HOST || '0.0.0.0';
 const path = require("node:path");
 const messagesRoutes = require('./routes/messagesRoutes.js');
 const arrays = require("./arrays.js");
