@@ -3,30 +3,24 @@ const { Pool } = require("pg");
 const myObject = {};
 require('dotenv').config({ processEnv: myObject });
 
-if (myObject.NODE_ENV ='production'){
+const connectionString = `postgresql://${myObject.ROLE_NAME}:${myObject.PASSWORD}@${myObject.DB_HOST}/${myObject.DATABASE}?sslmode=require`;
 
-  module.exports = new Pool({
-    host: myObject.DB_HOST, 
-    user: myObject.ROLE_NAME,
-    database: myObject.DATABASE,
-    password: myObject.PASSWORD,
-    port: process.env.PORT || myObject.DB_PORT,
-    ssl: 'verify-full',
-    sslrootcert: '/etc/ssl/certs/ca-certificates.crt',
-  });
+module.exports = new Pool({
+  connectionString: connectionString,
+});
 
-}else{
-  
-  module.exports = new Pool({
-    host: myObject.DB_HOST, 
-    user: myObject.ROLE_NAME,
-    database: myObject.DATABASE,
-    password: myObject.PASSWORD,
-    port: myObject.DB_PORT,
-    ssl: {
+/* module.exports = new Pool({
+  host: myObject.DB_HOST, 
+  user: myObject.ROLE_NAME,
+  database: myObject.DATABASE,
+  password: myObject.PASSWORD,
+  port: process.env.PORT || myObject.DB_PORT,
+  ssl: {
     require: true,
     },
-  });
+}); */
 
-}
-
+/* 
+ssl: 'verify-full',
+    sslrootcert: '/etc/ssl/certs/ca-certificates.crt',
+*/
