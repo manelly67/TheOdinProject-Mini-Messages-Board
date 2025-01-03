@@ -2,13 +2,8 @@ const pool = require("./pool");
 
 
 async function getAllMessages() {
-    try {
-        const { rows } = await pool.query("SELECT * FROM messages");
+    const { rows } = await pool.query("SELECT * FROM messages");
         return rows;
-      } catch (error) {
-        console.error('Unexpected error on idle client', error);
-        process.exit(1);
-      }   
 }
 
 

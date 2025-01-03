@@ -7,6 +7,7 @@ const connectionString = `postgresql://${myObject.ROLE_NAME}:${myObject.PASSWORD
 
 module.exports = new Pool({
   connectionString: connectionString,
+  port: process.env.PORT || 5432,
 });
 
 /* module.exports = new Pool({
