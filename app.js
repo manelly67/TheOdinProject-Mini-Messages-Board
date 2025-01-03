@@ -34,6 +34,6 @@ app.use((req, res) => {
     console.log(`Express and EJS view engine ${PORT}!`);
 }); */
 
-app.listen(port, host, () => {
-    console.log(`Server is running on http://${host}:${port}`);
+app.listen(port, () => {
+    console.log(`Server is running on ${port}`);
 });
