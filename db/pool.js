@@ -10,6 +10,7 @@ if (myObject.NODE_ENV ='production'){
     user: myObject.ROLE_NAME,
     database: myObject.DATABASE,
     password: myObject.PASSWORD,
+    port: process.env.PORT || myObject.DB_PORT,
     ssl: 'verify-full',
     sslrootcert: '/etc/ssl/certs/ca-certificates.crt',
   });
