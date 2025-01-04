@@ -2,7 +2,7 @@ const { Pool } = require("pg");
 
 const myObject = {};
 require('dotenv').config({ processEnv: myObject });
-const port = process.env.PORT || 5432;
+const port = 5432;
 
 /* const connectionString = `postgresql://${myObject.ROLE_NAME}:${myObject.PASSWORD}@${myObject.DB_HOST}:${port}/${myObject.DATABASE}?sslmode=require`;
 
@@ -16,9 +16,7 @@ module.exports = new Pool({
   database: myObject.DATABASE,
   password: myObject.PASSWORD,
   port: port,
-  ssl: {
-    require: true,
-    },
+  ssl: { require: true, rejectUnauthorized: false, },
 });
 
 /* 
