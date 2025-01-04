@@ -1,4 +1,15 @@
-const pool = require("./pool");
+/* const pool = require("./pool"); */
+
+const pkg = require("pg");
+// Create a new pool using your Neon database connection string
+const { Pool } = pkg;
+
+const myObject = {};
+require('dotenv').config({ processEnv: myObject });
+
+const pool = new Pool({
+  connectionString: process.env.DATABASE_URL || myObject.DATABASE_URL
+});
 
 
 async function getAllMessages() {
